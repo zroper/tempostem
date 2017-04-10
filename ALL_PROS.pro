@@ -97,12 +97,14 @@ declare int fix_manual = 1;				//auto fixation task = 1
 #include C:/TEMPO/ProcLib/GOODVARS.pro	// do user defined variables make sense before starting the task?
 
 #include C:/TEMPO/ProcLib/FIXATION.pro	// fixation control structure
+#include C:/TEMPO/ProcLib/FIXTRIAL.pro	// fixation trial
+#include C:/TEMPO/ProcLib/FIX_PGS.pro	// setup fixation stimuli
+
 #include C:/TEMPO/ProcLib/SEARCH.pro	// SEARCH control structure
 #include C:/TEMPO/ProcLib/SCHTRIAL.pro
 #include C:/TEMPO/ProcLib/SET_SCH.pro	// sets parameters for search RT graph
 
 #include C:/TEMPO/ProcLib/GRAPHS.pro    // required when using object graphs in cmanding protocol (modified from object.pro to include graph setup)
-
 
 #include C:/TEMPO/ProcLib/SET_CLRS.pro	// sets the stim colors up
 #include C:/TEMPO/ProcLib/SET_COOR.pro  // set screen coordinates up and calculate some conversion factors
@@ -115,7 +117,6 @@ declare int fix_manual = 1;				//auto fixation task = 1
 
 #include C:/TEMPO/ProcLib/TONE.pro      // does simple frequency conversion and presents tone accordingly
 
-#include C:/TEMPO/ProcLib/FIX_PGS.pro	// setup fixation stimuli
 #include C:/TEMPO/ProcLib/FLS_PGS.pro	// setup flash stimuli
 
 
