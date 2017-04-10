@@ -125,6 +125,8 @@ declare int fix_manual = 1;				//auto fixation task = 1
 #include C:/TEMPO/ProcLib/DRW_PLAC.pro	// simple process for drawing placeholder stimulus
 #include C:/TEMPO/ProcLib/DRW_SQR.pro	// simple process for drawing box
 
+#include C:/TEMPO/Proclib/SEND_TTL.pro  // Code for sending events to TDT
+
 #include C:/TEMPO/ProcLib/REP_ORT.pro   // simple process for selecting repeated display orientations prior to trial
 #include C:/TEMPO/ProcLib/RAND_ORT.pro	// simple process for selecting random display orientation prior to trial
 #include C:/TEMPO/ProcLib/LOC_REP.pro	// simple process for selecting repeated display locations prior to trial
