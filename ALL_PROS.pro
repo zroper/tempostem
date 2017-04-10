@@ -116,9 +116,14 @@ declare int fix_manual = 1;				//auto fixation task = 1
 #include C:/TEMPO/ProcLib/WATCHEYE.pro	// monitors eye position on each process cyle
 
 #include C:/TEMPO/ProcLib/TONE.pro      // does simple frequency conversion and presents tone accordingly
+#include C:/TEMPO/ProcLib/JUICE.pro     // Sets up juice delivery
 
 #include C:/TEMPO/ProcLib/FLS_PGS.pro	// setup flash stimuli
 
+#include C:/TEMPO/ProcLib/DRW_T.pro		// simple process for drawing T stimulus, incldues T_ORIENT
+#include C:/TEMPO/ProcLib/DRW_L.pro	    // simple process for drawing L stimulus, incldues L_ORIENT
+#include C:/TEMPO/ProcLib/DRW_PLAC.pro	// simple process for drawing placeholder stimulus
+#include C:/TEMPO/ProcLib/DRW_SQR.pro	// simple process for drawing box
 
 #include C:/TEMPO/ProcLib/REP_ORT.pro   // simple process for selecting repeated display orientations prior to trial
 #include C:/TEMPO/ProcLib/RAND_ORT.pro	// simple process for selecting random display orientation prior to trial
@@ -128,10 +133,6 @@ declare int fix_manual = 1;				//auto fixation task = 1
 
 #include C:/TEMPO/ProcLib/SEL_LOCS.pro	// simple process for selecting stimulus locations on a given trials, from above 2 files
 
-#include C:/TEMPO/ProcLib/DRW_T.pro		// simple process for drawing T stimulus, incldues T_ORIENT
-#include C:/TEMPO/ProcLib/DRW_L.pro	    // simple process for drawing L stimulus, incldues L_ORIENT
-#include C:/TEMPO/ProcLib/DRW_PLAC.pro	// simple process for drawing placeholder stimulus
-#include C:/TEMPO/ProcLib/DRW_SQR.pro	// simple process for drawing box
 
 
 
