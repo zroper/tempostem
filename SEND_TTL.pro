@@ -22,7 +22,7 @@
 
 #include C:/TEMPO/ProcLib/WAIT_MU.pro
 
-declare SEND_TTL_debug(int value);
+declare SEND_TTL(int value);
 
 /* process SEND_TTL(int value)
 	{
@@ -40,7 +40,7 @@ declare SEND_TTL_debug(int value);
  } */
 
  
- process SEND_TTL_debug(int value)
+ process SEND_TTL(int value)
 	{	
 	declare int output = 0;
 	int shiftVal;
