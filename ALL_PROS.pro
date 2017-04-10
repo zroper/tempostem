@@ -85,37 +85,44 @@ declare int Event_fifo[Event_fifo_N];	// Global first in first out buffer for ev
 declare int Set_event = 0;              // Current index of Event_fifo buffer to set
 declare int fix_manual = 1;				//auto fixation task = 1
 
-#include C:/TEMPO/ProcLib/RIGSETUP.pro  // declares a bunch of rig specific global variables
-#include C:/TEMPO/ProcLib/EVENTDEF.pro	// event code definitions
 #include C:/TEMPO/ProcLib/ALL_VARS.pro	// declares global variables needed to run protocols
+
+#include C:/TEMPO/ProcLib/RIGSETUP.pro  // declares a bunch of rig specific global variables
 #include C:/TEMPO/ProcLib/DEFAULT.pro	// sets all globals to their appropriate defaults for countermanding
-#include C:/TEMPO/ProcLib/GOODVARS.pro	// do user defined variables make sense before starting the task?
-#include C:/TEMPO/ProcLib/STIM.pro		// deliver microstim and send a stobe
-#include C:/TEMPO/ProcLib/KEY_STIM.pro	// deliver microstim via key press
-#include C:/TEMPO/ProcLib/SET_CLRS.pro	// sets the stim colors up
+
+#include C:/TEMPO/ProcLib/EVENTDEF.pro	// event code definitions
+#include C:/TEMPO/ProcLib/INFOS.pro		// queue up all trial event codes for strobing to plexon
 #include C:/TEMPO/ProcLib/DIO.pro		// necessary for digital input output communication
+
+#include C:/TEMPO/ProcLib/GOODVARS.pro	// do user defined variables make sense before starting the task?
+
+#include C:/TEMPO/ProcLib/FIXATION.pro	// fixation control structure
+#include C:/TEMPO/ProcLib/SEARCH.pro	// SEARCH control structure
+#include C:/TEMPO/ProcLib/SCHTRIAL.pro
+
+
+
+#include C:/TEMPO/ProcLib/SET_CLRS.pro	// sets the stim colors up
 #include C:/TEMPO/ProcLib/SET_COOR.pro  // set screen coordinates up and calculate some conversion factors
 #include C:/TEMPO/ProcLib/GRAPHS.pro    // required when using object graphs in cmanding protocol (modified from object.pro to include graph setup)
 #include C:/TEMPO/ProcLib/SET_INH.pro	// sets up the inhibition function graph used in cmanding
+
 #include C:/TEMPO/ProcLib/SET_SOA.pro
 #include C:/TEMPO/ProcLib/SET_SCH.pro	// sets parameters for search RT graph
+
 #include C:/TEMPO/ProcLib/WINDOWS.pro	// sets fixation and target window size (these valeus are needed in WATCHEYE.pro)
 #include C:/TEMPO/ProcLib/WATCHEYE.pro	// monitors eye position on each process cyle
+
 #include C:/TEMPO/ProcLib/TONE.pro      // does simple frequency conversion and presents tone accordingly
-//#include C:/TEMPO/ProcLib/TONESWEP.pro	// a sweep through several tones for a sound which can be distinguished from pure tones
-//#include C:/TEMPO/ProcLib/WATCHMTH.pro	// monitors mouth movement on each process cycle
-//#include C:/TEMPO/ProcLib/WATCHBOD.pro	// monitors body movement on each process cycle
 #include C:/TEMPO/ProcLib/SVR_BELL.pro	// sounds speaker on server
-#include C:/TEMPO/ProcLib/SVR_BEL2.pro	// sounds speaker on server (different)
-#include C:/TEMPO/ProcLib/CMDTRIAL.pro	// runs a single countermanding trial based on input
-#include C:/TEMPO/ProcLib/MGTRIAL.pro
-#include C:/TEMPO/ProcLib/SCHTRIAL.pro
-//#include C:/TEMPO/ProcLib/VMAPTRIAL.pro
+
+#include C:/TEMPO/ProcLib/FIX_PGS.pro	// setup fixation stimuli
+#include C:/TEMPO/ProcLib/FLS_PGS.pro	// setup flash stimuli
+
 
 #include C:/TEMPO/ProcLib/REP_ORT.pro   // simple process for selecting repeated display orientations prior to trial
 #include C:/TEMPO/ProcLib/RAND_ORT.pro	// simple process for selecting random display orientation prior to trial
 #include C:/TEMPO/ProcLib/LOC_REP.pro	// simple process for selecting repeated display locations prior to trial
-//#include C:/TEMPO/ProcLib/LOC_RAND_SING.pro	// simple process for selecting random display locations prior to trial
 #include C:/TEMPO/ProcLib/LOC_RAND.pro	// simple process for selecting random display locations prior to trial
 #include C:/TEMPO/ProcLib/LOC_ASYM.pro	// select displays for probability cueing mode
 
@@ -126,38 +133,13 @@ declare int fix_manual = 1;				//auto fixation task = 1
 #include C:/TEMPO/ProcLib/DRW_PLAC.pro	// simple process for drawing placeholder stimulus
 #include C:/TEMPO/ProcLib/DRW_SQR.pro	// simple process for drawing box
 
-#include C:/TEMPO/ProcLib/FIX_PGS.pro	// setup fixation stimuli
-#include C:/TEMPO/ProcLib/FLS_PGS.pro	// setup flash stimuli
-//#include C:/TEMPO/ProcLib/LSCH_PGS.pro	// setup search windows - L
-//#include C:/TEMPO/ProcLib/TSCH_PGS.pro	// setup search windows - T
-#include C:/TEMPO/ProcLib/CMD_PGS.pro	// setup countermanding windows
 
-#include C:/TEMPO/ProcLib/SETC_TRL.pro	// sets up all of the input to run a countermanding trial
-#include C:/TEMPO/ProcLib/SETMGTRL.pro
-//#include C:/TEMPO/ProcLib/SETM_TRL.pro
-#include C:/TEMPO/ProcLib/SETG_TRL.pro  // sets up all input to run a gonogo trial
-#include C:/TEMPO/ProcLib/SETD_TRL.pro  // sets up all input to run a delayed saccade trial
 #include C:/TEMPO/ProcLib/SETS_TRL.pro  // sets up all input to run a search trial
 
-#include C:/TEMPO/ProcLib/GNGTRIAL.pro	// runs a single gonogo guided trial based on input
-//#include C:/TEMPO/ProcLib/DELTRIAL.pro 	// runs a single delayed saccade trial based on input
-#include C:/TEMPO/ProcLib/UPD8_INH.pro	// updates inhibition function for cmanding
-//#include C:/TEMPO/ProcLib/UPD8_SOA.pro  
-#include C:/TEMPO/ProcLib/UPD8_SCH.pro	// updates search performance RT
-#include C:/TEMPO/ProcLib/INFOS.pro		// queue up all trial event codes for strobing to plexon
+
 #include C:/TEMPO/ProcLib/END_TRL.pro	// ends a trial based on outcome
-//#include C:/TEMPO/ProcLib/KEY_REWD.pro	// needed to give reward manually from keyboard (stupid)
-#include C:/TEMPO/ProcLib/KEY_TARG.pro	// see above
-#include C:/TEMPO/ProcLib/FIXATION.pro	// fixation control structure
-//#include C:/TEMPO/ProcLib/CMANDING.pro	// countermanding control structure
-//#include C:/TEMPO/ProcLib/MEMORY.pro	// mem guided sacc task control structure
-//#include C:/TEMPO/ProcLib/MGUIDE.pro
-//#include C:/TEMPO/ProcLib/GONOGO.pro    // gonogo sacc task control structure
-//#include C:/TEMPO/ProcLib/DELAYED.pro   // delayed guided sacc task control structure
-#include C:/TEMPO/ProcLib/SEARCH.pro	// SEARCH control structure
-//#include C:/TEMPO/ProcLib/VISMAP.pro 	// Visual mapping 
-//#include C:/TEMPO/ProcLib/FLSHSCRN.pro	// for gross VEPs
-//#include C:/TEMPO/ProcLib/QUE_TTL.pro	// makes a ring buffer for sending TTL events
+
+
 
 
 
