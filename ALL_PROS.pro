@@ -99,22 +99,21 @@ declare int fix_manual = 1;				//auto fixation task = 1
 #include C:/TEMPO/ProcLib/FIXATION.pro	// fixation control structure
 #include C:/TEMPO/ProcLib/SEARCH.pro	// SEARCH control structure
 #include C:/TEMPO/ProcLib/SCHTRIAL.pro
+#include C:/TEMPO/ProcLib/SET_SCH.pro	// sets parameters for search RT graph
 
+#include C:/TEMPO/ProcLib/GRAPHS.pro    // required when using object graphs in cmanding protocol (modified from object.pro to include graph setup)
 
 
 #include C:/TEMPO/ProcLib/SET_CLRS.pro	// sets the stim colors up
 #include C:/TEMPO/ProcLib/SET_COOR.pro  // set screen coordinates up and calculate some conversion factors
-#include C:/TEMPO/ProcLib/GRAPHS.pro    // required when using object graphs in cmanding protocol (modified from object.pro to include graph setup)
-#include C:/TEMPO/ProcLib/SET_INH.pro	// sets up the inhibition function graph used in cmanding
+#include C:/TEMPO/ProcLib/SETS_TRL.pro  // sets up all input to run a search trial
 
 #include C:/TEMPO/ProcLib/SET_SOA.pro
-#include C:/TEMPO/ProcLib/SET_SCH.pro	// sets parameters for search RT graph
 
 #include C:/TEMPO/ProcLib/WINDOWS.pro	// sets fixation and target window size (these valeus are needed in WATCHEYE.pro)
 #include C:/TEMPO/ProcLib/WATCHEYE.pro	// monitors eye position on each process cyle
 
 #include C:/TEMPO/ProcLib/TONE.pro      // does simple frequency conversion and presents tone accordingly
-#include C:/TEMPO/ProcLib/SVR_BELL.pro	// sounds speaker on server
 
 #include C:/TEMPO/ProcLib/FIX_PGS.pro	// setup fixation stimuli
 #include C:/TEMPO/ProcLib/FLS_PGS.pro	// setup flash stimuli
@@ -134,7 +133,6 @@ declare int fix_manual = 1;				//auto fixation task = 1
 #include C:/TEMPO/ProcLib/DRW_SQR.pro	// simple process for drawing box
 
 
-#include C:/TEMPO/ProcLib/SETS_TRL.pro  // sets up all input to run a search trial
 
 
 #include C:/TEMPO/ProcLib/END_TRL.pro	// ends a trial based on outcome
