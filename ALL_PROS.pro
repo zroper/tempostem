@@ -110,8 +110,6 @@ declare int fix_manual = 1;				//auto fixation task = 1
 #include C:/TEMPO/ProcLib/SET_COOR.pro  // set screen coordinates up and calculate some conversion factors
 #include C:/TEMPO/ProcLib/SETS_TRL.pro  // sets up all input to run a search trial
 
-#include C:/TEMPO/ProcLib/SET_SOA.pro
-
 #include C:/TEMPO/ProcLib/WINDOWS.pro	// sets fixation and target window size (these valeus are needed in WATCHEYE.pro)
 #include C:/TEMPO/ProcLib/WATCHEYE.pro	// monitors eye position on each process cyle
 
@@ -127,23 +125,13 @@ declare int fix_manual = 1;				//auto fixation task = 1
 
 #include C:/TEMPO/Proclib/SEND_TTL.pro  // Code for sending events to TDT
 
-#include C:/TEMPO/ProcLib/REP_ORT.pro   // simple process for selecting repeated display orientations prior to trial
 #include C:/TEMPO/ProcLib/RAND_ORT.pro	// simple process for selecting random display orientation prior to trial
-#include C:/TEMPO/ProcLib/LOC_REP.pro	// simple process for selecting repeated display locations prior to trial
 #include C:/TEMPO/ProcLib/LOC_RAND.pro	// simple process for selecting random display locations prior to trial
 #include C:/TEMPO/ProcLib/LOC_ASYM.pro	// select displays for probability cueing mode
 
 #include C:/TEMPO/ProcLib/SEL_LOCS.pro	// simple process for selecting stimulus locations on a given trials, from above 2 files
 
-
-
-
-
 #include C:/TEMPO/ProcLib/END_TRL.pro	// ends a trial based on outcome
-
-
-
-
 
 //----------------------------------------------------------------------
 process IDLE() enabled					// When the clock is started the task is not yet running.
