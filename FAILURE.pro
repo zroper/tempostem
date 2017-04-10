@@ -54,7 +54,7 @@ process FAILURE(int trial_length,									// see DEFAULT.pro and ALL_VARS.pro fo
 	                                                                // NOTE: if you add a bunch more strobes to INFOS.pro and you...
 	                                                                // start getting buffer overflow errors increase the number of nextticks.
 	
-		if (State == run_search_sess)
+	if (State == run_search_sess)
 		{
 		spawnwait SETS_TRL(n_targ_pos,			
 					go_weight,				
@@ -66,13 +66,10 @@ process FAILURE(int trial_length,									// see DEFAULT.pro and ALL_VARS.pro fo
 					max_holdtime,                   
 					expo_jitter);  
 		}	
-
 		
 	if(LastStopOutcome != 2)										// quick way to check if last trial was a stop trial
 		{
-		spawn UPD8_INH(curr_ssd, 									// update the inh graph
-				laststopoutcome,
-				decide_ssd);
+		spawn UPD8_SCH();
 		}
 				
 																	// Impose the correct intertrial interval and timeout based on user input
