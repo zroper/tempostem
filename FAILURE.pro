@@ -54,19 +54,7 @@ process FAILURE(int trial_length,									// see DEFAULT.pro and ALL_VARS.pro fo
 	                                                                // NOTE: if you add a bunch more strobes to INFOS.pro and you...
 	                                                                // start getting buffer overflow errors increase the number of nextticks.
 	
-	if (State == run_cmd_sess)
-		{
-		spawn SETC_TRL(n_targ_pos,			
-					go_weight,				
-					stop_weight,        				// see DEFAULT.pro and ALL_VARS.pro for explanations of these globals
-					ignore_weight,              
-					staircase,                      
-					n_SSDs,                         
-					min_holdtime,                   
-					max_holdtime,                   
-					expo_jitter);  
-		}
-	else if (State == run_search_sess)
+		if (State == run_search_sess)
 		{
 		spawnwait SETS_TRL(n_targ_pos,			
 					go_weight,				
@@ -78,39 +66,7 @@ process FAILURE(int trial_length,									// see DEFAULT.pro and ALL_VARS.pro fo
 					max_holdtime,                   
 					expo_jitter);  
 		}	
-	else if (State == run_mg_sess)
-		{
-		spawn SETMGTRL(n_targ_pos,							// see DEFAULT.pro and ALL_VARS.pro for explanations of these globals
-				 go_weight,
-				 stop_weight,
-				 ignore_weight,
-				 n_SOAs,
-				 min_holdtime,
-				 max_holdtime,
-				 expo_jitter,
-				 expo_jitter_soa);
-		}
-	else if (State == run_gonogo_sess)
-		{
-		spawn	SETG_TRL(n_targ_pos,				// Select variables for the first mem guided...					
-				min_holdtime,           		// ...trial.  This happens once outside of the while...
-				max_holdtime,           		// ...loop just to set up for the first iteration. After...
-				expo_jitter,            		// ...that SETM_TRL.pro will be called by END_TRL.pro.
-				min_soa,
-				max_soa,
-				expo_jitter_soa);
-		}
-		
-	else if (State == run_delayed_sess)
-		{
-		spawn	SETD_TRL(n_targ_pos,				// Select variables for the first mem guided...					
-				min_holdtime,           		// ...trial.  This happens once outside of the while...
-				max_holdtime,           		// ...loop just to set up for the first iteration. After...
-				expo_jitter,            		// ...that SETM_TRL.pro will be called by END_TRL.pro.
-				min_soa,
-				max_soa,
-				expo_jitter_soa);
-		}	
+
 		
 	if(LastStopOutcome != 2)										// quick way to check if last trial was a stop trial
 		{
