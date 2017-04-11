@@ -2,7 +2,7 @@
 // process DRW_T(angle,eccentricity,color,fill)
 // Draw a T on the video sync screen
 //
-// INPUT
+// 	INPUT
 //	 size         = how big do you want the square to be?  (must know your virtual coordiate system)
 //	 angle 		  = in cartesian coordinates
 //   eccentricity = once again you must know your virtual coordiate system
@@ -11,12 +11,12 @@
 //   deg2pixX     = scaling factor to go between degrees and pixels (see SET_COOR.pro)
 //   deg2pixY     = same as above
 //
-// written by joshua.d.cosman@vanderbilt.edu 	July, 2013, edited by Zachary J.J. Roper z.roper@vanderbilt.edu	April 10, 2017 
+// written by joshua.d.cosman@vanderbilt.edu 	July, 2013
+// edited by Zachary J.J. Roper z.roper@vanderbilt.edu	April 10, 2017 
 
 declare DRW_T(float angle, float eccentricity, int color, float orientation, int fill, float conversion_X, float conversion_Y);
 
-
-//Declare Variables - now declared in ALL_VARS.pro
+// Declare Variables - now declared in ALL_VARS.pro
 // declare hide constant llength = 2;
 // declare hide constant lwidth = 0.1;
 
@@ -98,10 +98,8 @@ else if (orientation == 4) //Right Tilted T
 	TVx2       = ((stim_ecc_x + (half_length - lwidth))*conversion_X);
 	TVy2       = ((stim_ecc_y + half_length)*conversion_Y);
     }
-	
 
-// send video sync command to draw desired T orientation
-	dsendf("co %d;\n",color);
+	dsendf("co %d;\n",color); // send video sync command to draw desired T orientation
 	
 	if(fill == 0)
 		{
