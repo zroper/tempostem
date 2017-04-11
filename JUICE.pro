@@ -2,10 +2,11 @@
 // process JUICE(int channel, int duration)
 // Deliver a juice reward to the animal
 // INPUT
-//	 channel  = rig specific TTL channel connected to solenoid (channel 9 in 028)
+//	 channel  = rig specific TTL channel connected to solenoid (channel 9 in 028, channel 0 in 023)
 //	 duration = amount of time (in ms) to leave solenoid open
 //
-// written by david.c.godlove@vanderbilt.edu 	January, 2011, edited by Zachary J.J. Roper z.roper@vanderbilt.edu	April 10, 2017
+// written by david.c.godlove@vanderbilt.edu 	January, 2011
+// edited by Zachary J.J. Roper z.roper@vanderbilt.edu	April 10, 2017
 
 declare JUICE(int channel, int duration);
 
