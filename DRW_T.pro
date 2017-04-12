@@ -13,6 +13,7 @@
 //
 // written by joshua.d.cosman@vanderbilt.edu 	July, 2013
 // edited by Zachary J.J. Roper z.roper@vanderbilt.edu	April 10, 2017 
+// GitHub and Meister task integration
 
 declare DRW_T(float angle, float eccentricity, int color, float orientation, int fill, float conversion_X, float conversion_Y);
 
